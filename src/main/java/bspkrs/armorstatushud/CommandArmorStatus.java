@@ -10,13 +10,13 @@ import bspkrs.fml.util.DelayedGuiDisplayTicker;
 public class CommandArmorStatus extends CommandBase
 {
     @Override
-    public String getCommandName()
+    public String getName()
     {
         return "armorstatus";
     }
 
     @Override
-    public String getCommandUsage(ICommandSender var1)
+    public String getUsage(ICommandSender var1)
     {
         return "commands.armorstatus.usage";
     }

@@ -219,7 +219,10 @@ public class ArmorStatusHUD
 
     public static boolean playerHasArmorEquipped(EntityPlayer player)
     {
-        return (player.inventory.armorItemInSlot(0) != null) || (player.inventory.armorItemInSlot(1) != null) || (player.inventory.armorItemInSlot(2) != null) || (player.inventory.armorItemInSlot(3) != null);
+        return (!player.inventory.armorItemInSlot(0).isEmpty()) ||
+                (!player.inventory.armorItemInSlot(1).isEmpty()) ||
+                (!player.inventory.armorItemInSlot(2).isEmpty()) ||
+                (!player.inventory.armorItemInSlot(3).isEmpty());
     }
 
     public static int countOfDisplayableItems(EntityPlayer player)
@@ -236,7 +239,7 @@ public class ArmorStatusHUD
 
     public static boolean canDisplayItem(ItemStack item)
     {
-        return item != null;
+        return !item.isEmpty();
     }
 
     private static void getHUDElements(Minecraft mc)
@@ -245,15 +248,15 @@ public class ArmorStatusHUD
 
         for (int i = 3; i >= -2; i--)
         {
-            ItemStack itemStack = null;
+            ItemStack itemStack = ItemStack.EMPTY;
             if (i == -1)
-                itemStack = showEquippedItem ? mc.thePlayer.getHeldItemOffhand() : null;
+                itemStack = showEquippedItem ? mc.player.getHeldItemOffhand() : ItemStack.EMPTY;
             else if (i == -2)
-                itemStack = showEquippedItem ? mc.thePlayer.getHeldItemMainhand() : null;
+                itemStack = showEquippedItem ? mc.player.getHeldItemMainhand() : ItemStack.EMPTY;
             else
-                itemStack = mc.thePlayer.inventory.armorInventory[i];
+                itemStack = mc.player.inventory.armorInventory.get(i);
 
-            if (itemStack != null)
+            if (!itemStack.isEmpty())
                 elements.add(new HUDElement(itemStack, 16, 16, 2, i > -1));
         }
     }
