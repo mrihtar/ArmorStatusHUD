@@ -46,6 +46,7 @@ minecraft {
     runDir = 'run'
     replace '@MOD_VERSION@', project.mod_version
     replace '@BSCORE_VERSION@', project.bscore_version
+    replace '@MINECRAFT_VERSION@', project.minecraft_version
 }
 
 processResources {

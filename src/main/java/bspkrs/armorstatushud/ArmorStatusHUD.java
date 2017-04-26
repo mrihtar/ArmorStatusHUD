@@ -247,11 +247,11 @@ public class ArmorStatusHUD
         {
             ItemStack itemStack = null;
             if (i == -1)
-                itemStack = showEquippedItem ? mc.thePlayer.getHeldItemOffhand() : null;
+                itemStack = showEquippedItem ? mc.player.getHeldItemOffhand() : null;
             else if (i == -2)
-                itemStack = showEquippedItem ? mc.thePlayer.getHeldItemMainhand() : null;
+                itemStack = showEquippedItem ? mc.player.getHeldItemMainhand() : null;
             else
-                itemStack = mc.thePlayer.inventory.armorInventory[i];
+                itemStack = mc.player.inventory.armorInventory[i];
 
             if (itemStack != null)
                 elements.add(new HUDElement(itemStack, 16, 16, 2, i > -1));
