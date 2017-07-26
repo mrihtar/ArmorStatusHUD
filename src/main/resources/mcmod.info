@@ -8,7 +8,7 @@
     "mcversion": "${minecraft_version}",
     "url": "http://www.minecraftforum.net/topic/1114612-/",
     "updateUrl": "",
-    "authorList": [ "bspkrs", "BlueAnanas", "ZenCoder" ],
+    "authorList": ["bspkrs", "BlueAnanas", "ZenCoder"],
     "credits": "Inspired by the armor/item tags available in IngameInfo by DaftPVF.",
     "logoFile": "",
     "screenshots": [],

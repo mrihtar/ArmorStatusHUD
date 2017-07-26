@@ -2,6 +2,7 @@ package bspkrs.armorstatushud;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
+import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import bspkrs.armorstatushud.fml.gui.GuiASHConfig;
@@ -44,5 +45,14 @@ public class CommandArmorStatus extends CommandBase
         {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public int compareTo(ICommand p_compareTo_1_)
+    {
+        if (p_compareTo_1_ instanceof CommandBase)
+            return this.getName().compareTo(((CommandBase)p_compareTo_1_).getName());
+
+        return 0;
     }
 }

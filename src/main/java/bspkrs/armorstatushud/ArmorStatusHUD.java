@@ -72,7 +72,6 @@ public class ArmorStatusHUD
 
     public static void initConfig(File file)
     {
-
         if (!CommonUtils.isObfuscatedEnv())
         { // debug settings for deobfuscated execution
           //            if (file.exists())
