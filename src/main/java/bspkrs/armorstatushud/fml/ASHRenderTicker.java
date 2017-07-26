@@ -2,15 +2,18 @@ package bspkrs.armorstatushud.fml;
 
 import bspkrs.armorstatushud.ArmorStatusHUD;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class ASHRenderTicker
 {
-    private Minecraft      mcClient;
+    private Minecraft mcClient;
     private static boolean isRegistered = false;
 
     public ASHRenderTicker()
@@ -27,7 +30,7 @@ public class ASHRenderTicker
 
         if (!ArmorStatusHUD.onTickInGame(mcClient))
         {
-            MinecraftForge.EVENT_BUS.unregister(this);
+            FMLCommonHandler.instance().bus().unregister(this);
             isRegistered = false;
         }
     }

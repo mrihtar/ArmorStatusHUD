@@ -8,7 +8,7 @@ import bspkrs.armorstatushud.fml.Reference;
 
 public class GuiASHConfig extends GuiConfig
 {
-    public GuiASHConfig(GuiScreen parent) throws NoSuchMethodException, SecurityException
+    public GuiASHConfig(GuiScreen parent)
     {
         super(parent, (new ConfigElement(Reference.config.getCategory(Configuration.CATEGORY_GENERAL))).getChildElements(),
                 Reference.MODID, false, false, GuiConfig.getAbridgedConfigPath(Reference.config.toString()));

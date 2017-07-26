@@ -12,11 +12,10 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
 
@@ -57,7 +56,7 @@ processResources {
 
         // replaces
         expand ([
-            'mod_version': version,
+            'mod_version': project.mod_version,
             'bscore_version': project.bscore_version,
             'forge_version': project.forge_version,
             'minecraft_version': project.minecraft_version
